@@ -1,18 +1,48 @@
 # Contextual AI Assistant
 
-## Contextual Knowledge Assistant
+The goal is to build cohesive or contextual smart agents leveraging LLM.
 
-The application would extract embeddings in chunks from all the PDF's in ./docs folder and then use the context to anser questions.
-TODO: Test other file formats for context e.g. ppt, doc, html, epub etc
+_Prerequisite_
 
-1. create a .env file with `OPENAI_API_KEY=<your key>`
-2. Add some pdf's for context
+1. install dependencices
+
+```
+pip install -r requirements.txt
+```
+
+2. create a .env file with `OPENAI_API_KEY=<your key>`
+
+## KAI (Knowledge AI Assistant)
+
+KAI is mostly an LLM over set of documents (pdf, doc, html, epub etc). It leverages Embedding-based search to answer question from the context (documents).
+
+> TODO: Test other file formats for context e.g. ppt, doc, html, epub etc
+
+Add some pdf's for context in `./docs` folder\
+[reference](https://cookbook.openai.com/examples/question_answering_using_embeddings): OpenAI cookbook
 
 ### Run
 
 ```
-pip install -r requirements.txt
 python kai.py clean --all
+```
+
+<br/>
+<hr/>
+
+## BAAI (Business Analysis AI Assistant)
+
+BAAI can help breaking down business features into Epics > Stoires > Acceptance cirterias.
+
+> _TODO_: extend the solution to groom stories with more validations and edge scenerios
+
+`baai_context.br.py` have top 5 features on building Singapore Rental car system extarcted from GPT. The questions that were asked to GPT were (1) what are the probelms with Singapore rental car system (2) Given above context what are the top 5 features to implement \
+[reference](https://learn.deeplearning.ai/chatgpt-prompt-eng): deeplearning.ai’s ChatGPT Prompt Engineering for Developers course
+
+### Run
+
+```
+python baai.py clean --all
 ```
 
 <br/>
